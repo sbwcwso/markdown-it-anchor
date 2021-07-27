@@ -1,6 +1,8 @@
 import * as permalink from './permalink'
+const GithubSlugger = require("github-slugger");
+const slugger = new GithubSlugger();
+const slugify = slugger.slug;
 
-const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'))
 
 function uniqueSlug (slug, slugs, failOnNonUnique, startIndex) {
   let uniq = slug
